@@ -1,12 +1,11 @@
 import * as React from 'react';
 import { render } from 'react-dom';
-import test from './components/dropdownInput';
-const s = require('./constants.styl');
+import DropdownInput from './components/dropdownInput';
 
 const App = () => (
   <div>
     <h1>Components</h1>
-    {test}
+    <DropdownInput/>
   </div>
 );
 

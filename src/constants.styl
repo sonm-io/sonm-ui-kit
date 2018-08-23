@@ -1,1 +1,39 @@
-$lilac = #675FDA
+light(color) {
+  lighten(color, 80%)
+}
+lightest(color) {
+  lighten(color, 90%)
+}
+dark(color) {
+  darken(color, 20%)
+}
+darkest(color) {
+  darken(color, 40%)
+}
+
+
+$static = #675FDA;
+$staticLight = light($static);
+$staticLightest = lightest($static);
+$staticDark = dark($static);
+$staticDarkest = darkest($static);
+
+$error = #c82a72;
+$errorLight = light($error);
+$errorLightest = lightest($error);
+$errorDark = dark($error);
+$errorDarkest = darkest($error);
+
+$inactive = #d8d8d8;
+
+$inputAnimationDuration = 100ms;
+$inputAnimationType = 'easy-in-out
+$inputTitleColor = #999999;
+$inputTitleSize = 14px;
+$inputTitleUpSize = 12px;
+
+$inputTextColor = #333333;
+$inputTextSize = 14px;
+
+$inputErrorColor = $error;
+$inputErrorSize = 12px;
