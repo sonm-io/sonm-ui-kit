@@ -53,6 +53,10 @@ module.exports = {
   ],
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
+    alias: {
+      components: `${SRC}/components`,
+      assets: `${SRC}/assets`
+    }
   },
   devServer: {
     contentBase: DIST,
