@@ -9,5 +9,6 @@
   "exclude": [
     "node_modules",
     "dist"
-  ]
+  ],
+  "include": ["src/typings//*.d.ts", "node_modules/@types//*.d.ts"]
 }

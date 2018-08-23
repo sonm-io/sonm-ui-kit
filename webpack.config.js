@@ -21,15 +21,8 @@ module.exports = {
         test: /\.styl$/,
         use: [
           { loader: 'style-loader' },
-          {
-            loader: 'typings-for-css-modules-loader',
-            options: {
-              modules: true,
-              namedExport: true,
-              localIdentName: isDev ? '[name]__[local]__[hash:base64:5]' : '[hash:base64:5]'
-            },
-          },
-          { loader: 'stylus-loader' }
+          { loader: 'css-loader', options: { modules: true } },
+          { loader: 'stylus-loader' },
         ],
       },
       {
@@ -55,7 +48,7 @@ module.exports = {
   plugins: [
     new HTMLWebpackPlugin({
       chunks: ['main'],
-      template: path.join(SRC, 'assets/index_template.html')
+      template: path.join(SRC, 'assets/index_template.html'),
     }),
   ],
   resolve: {
