@@ -1,0 +1,67 @@
+@import "../../constants.styl"
+
+.root {
+  width: 200px;
+}
+
+.title {
+  color: $static;
+  font-size: $inputTitleSize;
+  position: absolute;
+  top: 20px;
+  transition-duration: $inputAnimationDuration;
+  &.expanded {
+    color: $active;
+  }
+  &.filled {
+    top: 0;
+    font-size: $FilledInputTitleSize;
+  }
+}
+
+.button {
+  background: none;
+  text-align: left;
+  padding: 0;
+  font-size: $inputTextSize;
+  border: none;
+  border-bottom: 1px solid $inputStaticBorder;
+  min-width: 200px;
+  display: block;
+  height: 40px;
+  outline: none;
+  cursor: pointer;
+  &::before {
+    display: block;
+    width: 10%;
+    content: '';
+    height: calc(100% - 24px);
+  }
+  &::after {
+    display: block;
+    position: absolute;
+    content: url('../../assets/icons/arrowStatic.svg');
+    width: 10px;
+    height: 6px;
+    color: $static;
+    right: 0;
+    bottom: 7px;
+    transition-duration: $inputAnimationDuration;
+  }
+  &.expanded {
+    border-bottom-color: $active;
+    &::after {
+      content: url('../../assets/icons/arrowActive.svg');
+      color: active;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.popup {
+  padding: 16px;
+  box-shadow: 0 16px 36px 0 rgba(0,0,0,25%);
+  position: absolute;
+  margin-top: 16px;
+  width: 100%;
+}
