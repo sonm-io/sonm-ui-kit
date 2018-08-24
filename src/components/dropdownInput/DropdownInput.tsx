@@ -10,7 +10,7 @@ import {
 import { PropTypes } from '../../common/types';
 import * as propTypes from 'prop-types';
 
-export class DropdownInput extends React.Component<IDropdownInputProps, any> {
+class DropdownInput extends React.Component<IDropdownInputProps, any> {
   public static readonly defaultProps: IDropdownOptionalProps = {
     className: '',
     disabled: false,
