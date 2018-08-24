@@ -21,7 +21,13 @@ module.exports = {
         test: /\.styl$/,
         use: [
           { loader: 'style-loader' },
-          { loader: 'css-loader', options: { modules: true } },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: isDev ? '[name]__[local]__[hash:base64:5]' : '[hash:base64:5]',
+            },
+          },
           { loader: 'stylus-loader' },
         ],
       },
@@ -43,6 +49,10 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        use: ['url-loader?limit=10000', 'img-loader'],
+      },
     ],
   },
   plugins: [
@@ -54,9 +64,10 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
     alias: {
-      components: `${SRC}/components`,
-      assets: `${SRC}/assets`
-    }
+      components: path.resolve(SRC, '/components'),
+      assets: path.resolve(SRC, '/assets'),
+      common: path.resolve(SRC, '/common'),
+    },
   },
   devServer: {
     contentBase: DIST,
