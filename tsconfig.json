@@ -10,5 +10,11 @@
     "node_modules",
     "dist"
   ],
-  "include": ["src/typings//*.d.ts", "node_modules/@types//*.d.ts"]
+  "include": ["src/typings//*.d.ts", "node_modules/@types//*.d.ts"],
+  "baseUrl": ".",
+  "paths": {
+    "components/*": ["src/components/*"],
+    "common/*": ["src/common/*"],
+    "assets/*": ["src/assets/*"]
+  }
 }
