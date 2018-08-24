@@ -39,7 +39,7 @@ class Preview extends React.Component {
             </div>
           ))}
         </DropdownInput>
-        <Checkbox onChange={value => console.log(value)} title="checkbox" />
+        <Checkbox onChange={value => console.log(value)} title="checkbox" defaultChecked={true} />
         <Checkbox onChange={console.log} title="checkbox" disabled={true} />
       </div>
     );

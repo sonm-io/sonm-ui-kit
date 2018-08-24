@@ -8,7 +8,7 @@ export interface IChekboxOptional {
   children?: React.ReactNode;
   className?: string;
   disabled?: boolean;
-  value?: boolean;
+  defaultChecked?: boolean;
 }
 
 export type ICheckbox = ICheckboxRequired & IChekboxOptional;

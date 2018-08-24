@@ -13,7 +13,7 @@ class Checkbox extends React.Component<ICheckbox> {
     children: propTypes.node,
     className: propTypes.string,
     disabled: propTypes.bool,
-    value: propTypes.bool,
+    defaultChecked: propTypes.bool,
   };
   onChange = ({ target: { checked } }) => {
     if (this.props.disabled) return;
@@ -21,7 +21,7 @@ class Checkbox extends React.Component<ICheckbox> {
   };
 
   public render() {
-    const { title, children, className, disabled, value } = this.props;
+    const { title, children, className, disabled, defaultChecked } = this.props;
     const { onChange } = this;
     return (
       <div className={cn(s.root, className)}>
@@ -37,7 +37,7 @@ class Checkbox extends React.Component<ICheckbox> {
               if (disabled) e.preventDefault();
             }}
             onChange={onChange}
-            checked={value}
+            defaultChecked={defaultChecked}
           />
           <span className={s.fakeCheckbox} />
           <span className={s.title}>{title}</span>
